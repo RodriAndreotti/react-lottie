@@ -38,7 +38,7 @@ export default class Lottie extends Component {
     className: null,
     tabIndex: 0
   };
-  
+
   componentDidMount() {
     const { options, eventListeners } = this.props;
     const {
@@ -47,6 +47,8 @@ export default class Lottie extends Component {
       animationData,
       rendererSettings,
       segments,
+      goToAndPlay,
+      goToAndStop,
     } = options;
 
     this.options = {
@@ -55,6 +57,8 @@ export default class Lottie extends Component {
       loop: loop !== false,
       autoplay: autoplay !== false,
       segments: segments !== false,
+      goToAndPlay,
+      goToAndStop,
       animationData,
       rendererSettings,
       ...options
@@ -80,6 +84,14 @@ export default class Lottie extends Component {
       this.playSegments();
     } else {
       this.play();
+    }
+
+    if (JSON.stringify(this.props.goToAndPlay) !== JSON.stringify(prevProps.goToAndPlay)) {
+      this.goToAndPlay();
+    }
+
+    if (JSON.stringify(this.props.goToAndStop) !== JSON.stringify(prevProps.goToAndStop)) {
+      this.goToAndStop();
     }
 
     this.pause();
@@ -122,6 +134,16 @@ export default class Lottie extends Component {
     }
   }
 
+  goToAndPlay() {
+    const { value, isFrame } = this.props.goToAndPlay;
+    this.anim.goToAndPlay(value, isFrame);
+  }
+
+  goToAndStop() {
+    const { value, isFrame } = this.props.goToAndStop;
+    this.anim.goToAndStop(value, isFrame);
+  }
+
   destroy() {
     this.anim.destroy();
   }
@@ -157,7 +179,7 @@ export default class Lottie extends Component {
       style,
       ...extraProps
     } = this.props;
-    
+
     const lottieStyles = {
       width: getSize(width),
       height: getSize(height),
