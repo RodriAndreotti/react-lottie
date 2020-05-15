@@ -1,6 +1,6 @@
 {
-  "name": "@rodriandreotti/react-lottie-helper",
-  "version": "1.0.2",
+  "name": "@rodriandreotti/react-lottie",
+  "version": "1.0.1",
   "description": "Helper for Lottie with goToAndPlay and gotToAndStop actions. This package it's a fork from @donovanclarke/react-lottie repository.",
   "files": [
     "dist"
@@ -9,7 +9,6 @@
     "lottie",
     "animation",
     "react",
-    "react-lottie",
     "react-lottie"
   ],
   "license": "MIT",
