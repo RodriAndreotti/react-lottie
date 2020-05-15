@@ -26,7 +26,7 @@ Looking for lottie files › https://www.lottiefiles.com/
 
 Install through npm:
 ```
-npm install --save react-lottie-wrapper
+npm install --save @rodriandreotti/react-lottie
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ Import pinjump.json.json as animation data
 
 ```jsx
 import React, { Component } from "react"
-import Lottie from "react-lottie-wrapper";
+import Lottie from "react-lottie";
 import * as animationData from "./pinjump.json"
 
 export default class LottieControl extends Component {
@@ -67,7 +67,7 @@ export default class LottieControl extends Component {
 
     const defaultOptions = {
       loop: true,
-      autoplay: true, 
+      autoplay: true,
       animationData: animationData.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice"
@@ -76,7 +76,7 @@ export default class LottieControl extends Component {
 
     return (
       <>
-        <Lottie 
+        <Lottie
           options={defaultOptions}
           height={400}
           width={400}
@@ -95,7 +95,7 @@ export default class LottieControl extends Component {
         >
           play
         </button>
-        <button 
+        <button
           style={buttonStyle}
           onClick={this.handleAnimationAction("pause")}
         >
@@ -113,20 +113,20 @@ The `<Lottie />` Component supports the following properties:
 
 
 
-**options** *required* 
+**options** *required*
 
 **animationData** *required*
 
-**rendererSettings** *required* 
+**rendererSettings** *required*
 
 Below are a the available options that are exposed through lottie-web,
-these options are available in react-lottie-wrapper.
+these options are available in react-lottie.
 
 ```
 options = {
   loop: // optional
   autoplay: // optional
-  animationData: // required 
+  animationData: // required
   path: // optional
   rendererSettings: {
     context: // optional
@@ -141,7 +141,7 @@ options = {
 ```
 **renderAs** *optional* [default: `div`]
 
-You are given the option of either a `div` or `span` element. 
+You are given the option of either a `div` or `span` element.
 
 **styles** *optional* [default: `{{height: 100%, width: 100%, outline: none}}`]
 
@@ -191,7 +191,7 @@ Set the speed of the animation (`normal === 1`).
 
 **tabIndex** *optional* [default: `0`]
 
-Set the tab index of the container for accessibility. 
+Set the tab index of the container for accessibility.
 
 **eventListeners** *optional* [default: `[]`]
 
@@ -219,4 +219,3 @@ Your contributions and suggestions are heartily welcome.
 
 ## License
 MIT
-
