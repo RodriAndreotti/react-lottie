@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "release": "git add package.json && git commit -m \"chore: bump version number\" && standard-version --first-release && git push --follow-tags origin master && npm publish",
+    "release": "git add package.json && git commit -m \"chore: bump version number\" && standard-version && git push --follow-tags origin master && npm publish",
     "prepublish": "bash .scripts/prepublish.sh",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
