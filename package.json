@@ -2,7 +2,9 @@
   "name": "react-lottie",
   "version": "1.1.6",
   "description": "Wrapper for Lottie with goToAndPlay and gotToAndStop actions",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" } 
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rodriandreotti/react-lottie"
