@@ -22,7 +22,15 @@ export default class Lottie extends Component {
     title: PropTypes.string,
     style: PropTypes.object,
     className: PropTypes.string,
-    tabIndex: PropTypes.number
+    tabIndex: PropTypes.number,
+    goToAndPlay: PropTypes.shape({
+      value: PropTypes.number,
+      isFrame: PropTypes.bool,
+    }),
+    goToAndStop: PropTypes.shape({
+      value: PropTypes.number,
+      isFrame: PropTypes.bool,
+    }),
   };
 
   static defaultProps = {
@@ -36,7 +44,15 @@ export default class Lottie extends Component {
     isClickToPauseDisabled: false,
     title: null,
     className: null,
-    tabIndex: 0
+    tabIndex: 0,
+    goToAndPlay: {
+      value: null,
+      isFrame: false,
+    },
+    goToAndStop: {
+      value: null,
+      isFrame: false,
+    },
   };
 
   componentDidMount() {
@@ -67,6 +83,7 @@ export default class Lottie extends Component {
     this.registerEvents(eventListeners);
   }
 
+
   componentDidUpdate(nextProps) {
     /* Recreate the animation handle if the data is changed */
     const { eventListeners, isStopped, segments } = this.props;
@@ -86,11 +103,11 @@ export default class Lottie extends Component {
       this.play();
     }
 
-    if (JSON.stringify(this.props.goToAndPlay) !== JSON.stringify(prevProps.goToAndPlay)) {
+    if (JSON.stringify(this.props.goToAndPlay) !== JSON.stringify(nextProps.goToAndPlay)) {
       this.goToAndPlay();
     }
 
-    if (JSON.stringify(this.props.goToAndStop) !== JSON.stringify(prevProps.goToAndStop)) {
+    if (JSON.stringify(this.props.goToAndStop) !== JSON.stringify(nextProps.goToAndStop)) {
       this.goToAndStop();
     }
 
