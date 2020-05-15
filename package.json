@@ -13,7 +13,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "release": "git add package.json && git commit -m 'chore: bump version number' && standard-version --first-release && git push --follow-tags origin master && npm publish",
+    "release": "git add package.json && git commit -m \"chore: bump version number\" && standard-version --first-release && git push --follow-tags origin master && npm publish",
     "prepublish": "bash .scripts/prepublish.sh",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
@@ -46,8 +46,7 @@
     "react": "^15.6.2",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^15.6.2",
-    "sinon": "^1.17.6",
-    "standard-version": "^4.4.0"
+    "sinon": "^1.17.6"
   },
   "peerDependencies": {
     "react": "^0.14.7 || ^15.0.0 || ^16.0.0"
