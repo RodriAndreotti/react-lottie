@@ -1,6 +1,6 @@
 {
   "name": "@rodriandreotti/react-lottie",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Wrapper for Lottie with goToAndPlay and gotToAndStop actions",
   "files": [
     "dist"
