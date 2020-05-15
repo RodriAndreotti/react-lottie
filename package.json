@@ -1,7 +1,7 @@
 {
-  "name": "react-lottie-wrapper",
+  "name": "react-lottie",
   "version": "1.1.6",
-  "description": "lottie animation view for React",
+  "description": "Wrapper for Lottie with goToAndPlay and gotToAndStop actions",
   "repository": {
     "type": "git",
     "url": "https://github.com/rodriandreotti/react-lottie"
