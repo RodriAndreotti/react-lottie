@@ -9,7 +9,8 @@
     "lottie",
     "animation",
     "react",
-    "react-lottie"
+    "react-lottie",
+    "react-lottie-helper"
   ],
   "license": "MIT",
   "scripts": {
