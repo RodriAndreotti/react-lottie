@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/RodriAndreotti/react-lottie/compare/v2.0.3...v2.1.0) (2020-05-16)
+
+
+### Features
+
+* Add support to percent values on goToAndStop and goToAndPlay functions ([d39f2eb](https://github.com/RodriAndreotti/react-lottie/commit/d39f2ebf00b9cdd9a7b9f38cf38560ea61b56b09))
+
 ### [2.0.3](https://github.com/RodriAndreotti/react-lottie/compare/v2.0.2...v2.0.3) (2020-05-16)
 
 ### [2.0.2](https://github.com/RodriAndreotti/react-lottie/compare/v2.0.1...v2.0.2) (2020-05-16)
