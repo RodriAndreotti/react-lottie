@@ -158,7 +158,7 @@ export default class Lottie extends Component {
   goToAndPlay() {
     const { value, isFrame, isPercent } = this.props.goToAndPlay;
     if(isPercent) {
-      const position = Math.round(this.anim.getDuration(isFrame) * value) / 100;
+      const position = Math.round((isFrame ? this.anim.getDuration(isFrame) : this.anim.getDuration(isFrame) * 1000) * value / 100);
       this.anim.goToAndPlay(position, isFrame);
     } else {
       this.anim.goToAndPlay(value, isFrame);
@@ -169,7 +169,7 @@ export default class Lottie extends Component {
   goToAndStop() {
     const { value, isFrame, isPercent } = this.props.goToAndStop;
     if(isPercent) {
-      const position = Math.round(this.anim.getDuration(isFrame) * value) / 100;
+      const position = Math.round((isFrame ? this.anim.getDuration(isFrame) : this.anim.getDuration(isFrame) * 1000) * value / 100);
       this.anim.goToAndStop(position, isFrame);
     } else {
       this.anim.goToAndStop(value, isFrame);
