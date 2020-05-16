@@ -1,7 +1,7 @@
 # Lottie Animation View Wrapper for React
 
 ## Demo
-https://github.com/donovanclarke/react-lottie
+https://rodriandreotti.github.io/react-lottie/
 
 ## Wapper of bodymovin.js
 
@@ -35,8 +35,8 @@ Import pinjump.json.json as animation data
 
 ```jsx
 import React, { Component } from "react"
-import Lottie from "react-lottie";
-import * as animationData from "./pinjump.json"
+import Lottie from "@rodriandreotti/react-lottie";
+import animationData from "./pinjump.json"
 
 export default class LottieControl extends Component {
   constructor(props) {
@@ -195,6 +195,7 @@ Set the tab index of the container for accessibility.
 
 **eventListeners** *optional* [default: `[]`]
 
+
 This is an array of objects containing a `eventName` and `callback` function that will be registered as  eventlisteners on the animation object. refer to [bodymovin#events](https://github.com/bodymovin/bodymovin#events) where the mention using addEventListener, for a list of available custom events.
 
 example:
@@ -205,6 +206,31 @@ eventListeners=[
     callback: () => console.log('the animation completed:'),
   },
 ]
+```
+
+**goToAndStop** *optional* [default: {}]
+
+**goToAndPlay** *optional* [default: {}]
+
+This exampe show how to call goToAndStop function for an element. (_Used the pull request of https://github.com/grzegorz-s at original repository with modifications to accept the position with a percentage_)
+
+example:
+```jsx
+...
+const goToAndStop = {
+  value: 123,
+  isFrame: true,
+  isPercent: false
+};
+
+return <Lottie
+  options={defaultOptions}
+  height={400}
+  width={400}
+  isStopped={isStopped}
+  isPaused={isPaused}
+  goToAndStop={goToAndStop}
+/>
 ```
 
 ## Related Projects
