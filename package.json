@@ -1,6 +1,6 @@
 {
   "name": "@rodriandreotti/react-lottie",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Helper for Lottie with goToAndPlay and gotToAndStop actions. This package it's a fork from @donovanclarke/react-lottie repository. The functions goToAndPlay and goToAndStop now supports isPercent (with percentual values)",
   "files": [
     "dist"
