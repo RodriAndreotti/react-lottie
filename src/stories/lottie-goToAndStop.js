@@ -11,6 +11,7 @@ export default class LottieGoToAndStop extends React.Component {
       isStopped: false,
       value: 0,
       isFrame: false,
+      isPercent: false,
       loop: true,
     };
   }
@@ -21,7 +22,7 @@ export default class LottieGoToAndStop extends React.Component {
       margin: '10px auto',
       textAlign: 'center',
     };
-    const { isStopped, value, isFrame, loop } = this.state;
+    const { isStopped, value, isFrame, loop, isPercent } = this.state;
     const defaultOptions = { animationData, loop };
 
     return (<div>
@@ -33,10 +34,11 @@ export default class LottieGoToAndStop extends React.Component {
         goToAndStop={{
           value,
           isFrame,
+          isPercent
         }}
       />
 
-      <p style={centerStyle}>Go to and stop: [value: {value}, isFrame: {isFrame ? 1 : 0}]</p>
+      <p style={centerStyle}>Go to and stop: [value: {value}, isFrame: {isFrame ? 'true' : 'false'}, isPercent: {isPercent ? 'true' : 'false'}]</p>
       <div style={centerStyle}>
         <input
           type="text" value={value}
@@ -53,6 +55,19 @@ export default class LottieGoToAndStop extends React.Component {
 
           />
           Is frame
+        </label>
+
+
+        <label htmlFor="isPercent">
+          <input
+            id="isPercent"
+            name="isPercent"
+            type="checkbox"
+            checked={isPercent}
+            onChange={e => this.setState({ isPercent: e.currentTarget.checked })}
+
+          />
+          Is Percent
         </label>
       </div>
     </div>);

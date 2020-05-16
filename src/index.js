@@ -26,10 +26,12 @@ export default class Lottie extends Component {
     goToAndPlay: PropTypes.shape({
       value: PropTypes.number,
       isFrame: PropTypes.bool,
+      isPercent: PropTypes.bool,
     }),
     goToAndStop: PropTypes.shape({
       value: PropTypes.number,
       isFrame: PropTypes.bool,
+      isPercent: PropTypes.bool,
     }),
   };
 
@@ -48,10 +50,12 @@ export default class Lottie extends Component {
     goToAndPlay: {
       value: null,
       isFrame: false,
+      isPercent: false
     },
     goToAndStop: {
       value: null,
       isFrame: false,
+      isPercent: false
     },
   };
 
@@ -152,13 +156,24 @@ export default class Lottie extends Component {
   }
 
   goToAndPlay() {
-    const { value, isFrame } = this.props.goToAndPlay;
-    this.anim.goToAndPlay(value, isFrame);
+    const { value, isFrame, isPercent } = this.props.goToAndPlay;
+    if(isPercent) {
+      const position = Math.round(this.anim.getDuration(isFrame) * value) / 100;
+      this.anim.goToAndPlay(position, isFrame);
+    } else {
+      this.anim.goToAndPlay(value, isFrame);
+    }
+
   }
 
   goToAndStop() {
-    const { value, isFrame } = this.props.goToAndStop;
-    this.anim.goToAndStop(value, isFrame);
+    const { value, isFrame, isPercent } = this.props.goToAndStop;
+    if(isPercent) {
+      const position = Math.round(this.anim.getDuration(isFrame) * value) / 100;
+      this.anim.goToAndStop(position, isFrame);
+    } else {
+      this.anim.goToAndStop(value, isFrame);
+    }
   }
 
   destroy() {
