@@ -1,6 +1,6 @@
 {
   "name": "@rodriandreotti/react-lottie",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Helper for Lottie with goToAndPlay and gotToAndStop actions. This package it's a fork from @donovanclarke/react-lottie repository. The functions goToAndPlay and goToAndStop now supports isPercent (with percentual values)",
   "files": [
     "dist"
@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "release": "git add package.json && git commit -m \"chore: bump version number\" && standard-version && git push --follow-tags origin master && npm publish",
+    "release": "standard-version && git add package.json && git commit -m \"chore: bump version number\" && git push --follow-tags origin master && npm publish",
     "prepare": "bash .scripts/prepublish.sh",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
